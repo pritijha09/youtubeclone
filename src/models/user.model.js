@@ -90,4 +90,5 @@ userSchema.methods.generateRefreshToken = function(){
     )
 }
 
+console.log("test")
 export const User = mongoose.model("User", userSchema)
