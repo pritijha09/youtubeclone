@@ -1,5 +1,7 @@
 import dotenv from "dotenv"
-dotenv.config()
+dotenv.config({
+    path: './.env'
+})
 import mongoose from "mongoose";
 const {Schema} = mongoose;
 import jwt from "jsonwebtoken";
@@ -21,7 +23,7 @@ const userSchema = new Schema({
         lowercase: true,
         trim: true,
     },
-    fullname: {
+    fullName: {
         type: String,
         required: true,
         trim: true,
@@ -91,5 +93,4 @@ userSchema.methods.generateRefreshToken = function(){
     )
 }
 
-console.log("test")
 export const User = mongoose.model("User", userSchema)
